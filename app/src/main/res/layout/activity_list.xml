@@ -17,8 +17,20 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="@{() -> viewModel.getListData()}"
+            android:onClick="@{() -> viewModel.initListData()}"
             android:text="获取列表数据" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> viewModel.refreshListData()}"
+            android:text="刷新列表数据" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> viewModel.addListData()}"
+            android:text="新增一条列表数据" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_list"

@@ -12,7 +12,7 @@ public class ListViewModel extends ViewModel {
     public MutableLiveData<List<UserBean>> userBeanListMutableLiveData = new MutableLiveData<>();
     public List<UserBean> userBeanList = new ArrayList<>();
 
-    public void getListData(){
+    public void initListData() {
         List<UserBean> userBeans = new ArrayList<>();
         for (int i = 0; i < 50; i++) {
             UserBean userBean = new UserBean();
@@ -25,6 +25,33 @@ public class ListViewModel extends ViewModel {
             }
             userBeans.add(userBean);
         }
-        userBeanListMutableLiveData.postValue(userBeans);
+        userBeanListMutableLiveData.setValue(userBeans);
+    }
+
+    public void refreshListData() {
+        if (userBeanListMutableLiveData.getValue() != null) {
+            List<UserBean> userBeans = userBeanListMutableLiveData.getValue();
+            for (int i = 0; i < userBeans.size(); i++) {
+                userBeans.get(i).setName("数据更新了后的name");
+                userBeans.get(i).setNickname("数据更新了后的nickname");
+            }
+            userBeanListMutableLiveData.setValue(userBeans);
+        } else {
+            initListData();
+        }
+    }
+
+    public void addListData() {
+        if (userBeanListMutableLiveData.getValue() != null) {
+            List<UserBean> userBeans = userBeanListMutableLiveData.getValue();
+            UserBean userBean = new UserBean();
+            userBean.setName("新的数据name");
+            userBean.setNickname("新的数据nickname");
+            userBean.setSex(0);
+            userBeans.add(userBean);
+            userBeanListMutableLiveData.setValue(userBeans);
+        } else {
+            initListData();
+        }
     }
 }
