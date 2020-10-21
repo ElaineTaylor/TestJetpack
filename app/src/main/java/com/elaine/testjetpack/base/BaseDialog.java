@@ -47,9 +47,9 @@ public abstract class BaseDialog<T> extends Dialog {
         if (window != null) {
             window.setGravity(gravity);
         }
-        init();
         setCancelable(cancel);
         setCanceledOnTouchOutside(backCancel);
+        init();
     }
 
     protected abstract View getLayout();

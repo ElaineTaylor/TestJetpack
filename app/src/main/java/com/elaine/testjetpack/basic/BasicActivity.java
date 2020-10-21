@@ -17,17 +17,12 @@ public class BasicActivity extends BaseActivity<ActivityViewModelBinding> {
     @Override
     public void init() {
         initViewModel();
-        initData();
     }
 
     private void initViewModel() {
         basicViewModel = new ViewModelProvider(this).get(BasicViewModel.class);
-    }
-
-    private void initData() {
         mBinding.setViewModel(basicViewModel);
         mBinding.setLifecycleOwner(this);
     }
-
 
 }

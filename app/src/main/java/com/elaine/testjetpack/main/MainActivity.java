@@ -2,16 +2,15 @@ package com.elaine.testjetpack.main;
 
 import android.content.Intent;
 
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.elaine.testjetpack.R;
 import com.elaine.testjetpack.base.BaseActivity;
-import com.elaine.testjetpack.basic.BasicViewModel;
-import com.elaine.testjetpack.databinding.ActivityMainBinding;
 import com.elaine.testjetpack.basic.BasicActivity;
+import com.elaine.testjetpack.databinding.ActivityMainBinding;
 import com.elaine.testjetpack.dialog.DialogActivity;
 import com.elaine.testjetpack.list.ListActivity;
+import com.elaine.testjetpack.network.NetworkActivity;
 
 public class MainActivity extends BaseActivity<ActivityMainBinding> {
     private MainViewModel mainViewModel;
@@ -44,6 +43,9 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> {
                     break;
                 case 3:
                     startActivity(new Intent(MainActivity.this, ListActivity.class));
+                    break;
+                case 4:
+                    startActivity(new Intent(MainActivity.this, NetworkActivity.class));
                     break;
                 default:
                     break;

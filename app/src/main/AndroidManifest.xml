@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.elaine.testjetpack">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".base.BaseApp"
         android:allowBackup="true"
@@ -11,7 +13,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:ignore="AllowBackup">
+        android:usesCleartextTraffic="true"
+        tools:ignore="AllowBackup"
+        tools:targetApi="m">
+        <activity android:name=".network.NetworkActivity" />
         <activity android:name=".dialog.DialogActivity" />
         <activity android:name=".list.ListActivity" />
         <activity android:name=".basic.BasicActivity" />

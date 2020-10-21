@@ -36,5 +36,12 @@
             android:onClick="@{() -> viewModel.setIntentKey(3)}"
             android:text="list"
             android:textAllCaps="false" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> viewModel.setIntentKey(4)}"
+            android:text="network"
+            android:textAllCaps="false" />
     </LinearLayout>
 </layout>
