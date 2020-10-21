@@ -1,6 +1,5 @@
 package com.elaine.testjetpack.network.http;
 
-
 import android.util.Log;
 
 import java.net.Proxy;
@@ -15,7 +14,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Retrofit工具类
  *
  * @author elaine
- * @date 2020/9/1
  */
 public class RetrofitUtil {
     private static RetrofitUtil retrofitUtil;
@@ -45,6 +43,7 @@ public class RetrofitUtil {
         retrofit = new Retrofit.Builder()
                 .baseUrl(BaseHttpInfo.BASE_URL)
                 .client(okHttpBuilder.build())
+                .addCallAdapterFactory(new LiveDataCallAdapterFactory())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
     }
