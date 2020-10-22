@@ -1,6 +1,6 @@
-package com.elaine.testjetpack.network.http;
+package com.elaine.testjetpack.network.http.wan;
 
-public class NetBaseBean<T> {
+public class WanResponse<T> {
 
     public static final int CODE_SUCCESS = 0;
     public static final int CODE_ERROR = 1;
@@ -9,13 +9,13 @@ public class NetBaseBean<T> {
     private String errorMsg;
     private T data;
 
-    public NetBaseBean(int errorCode, String errorMsg) {
+    public WanResponse(int errorCode, String errorMsg) {
         this.errorCode = errorCode;
         this.errorMsg = errorMsg;
         this.data = null;
     }
 
-    public NetBaseBean(int errorCode, String errorMsg, T data) {
+    public WanResponse(int errorCode, String errorMsg, T data) {
         this.errorCode = errorCode;
         this.errorMsg = errorMsg;
         this.data = data;

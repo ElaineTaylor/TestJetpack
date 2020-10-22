@@ -2,6 +2,8 @@ package com.elaine.testjetpack.network.http;
 
 import androidx.lifecycle.LiveData;
 
+import com.elaine.testjetpack.network.http.wan.WanResponse;
+
 import java.lang.reflect.Type;
 import java.util.concurrent.atomic.AtomicBoolean;
 
@@ -12,6 +14,7 @@ import retrofit2.Response;
 
 public class LiveDataCallAdapter<T> implements CallAdapter<T, LiveData<T>> {
     private Type mResponseType;
+
 
     public LiveDataCallAdapter(Type mResponseType) {
         this.mResponseType = mResponseType;
@@ -48,7 +51,7 @@ public class LiveDataCallAdapter<T> implements CallAdapter<T, LiveData<T>> {
 
                     @Override
                     public void onFailure(Call<T> call, Throwable t) {
-                        postValue((T) new NetBaseBean<>(NetBaseBean.CODE_ERROR, t.getMessage()));
+                        postValue((T) new WanResponse<>(WanResponse.CODE_ERROR, t.getMessage()));
                     }
                 });
             }

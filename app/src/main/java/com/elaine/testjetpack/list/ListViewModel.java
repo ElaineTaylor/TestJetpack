@@ -51,7 +51,13 @@ public class ListViewModel extends ViewModel {
             userBeans.add(userBean);
             userBeanListMutableLiveData.setValue(userBeans);
         } else {
-            initListData();
+            List<UserBean> userBeans = new ArrayList<>();
+            UserBean userBean = new UserBean();
+            userBean.setName("新的数据name");
+            userBean.setNickname("新的数据nickname");
+            userBean.setSex(0);
+            userBeans.add(userBean);
+            userBeanListMutableLiveData.setValue(userBeans);
         }
     }
 }
