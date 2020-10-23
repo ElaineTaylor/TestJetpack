@@ -53,7 +53,7 @@ public class DialogActivity extends BaseActivity<ActivityDialogBinding> {
 
                 @Override
                 public void onClick(Object o) {
-                    if ((UserBean) o != null) {
+                    if (o != null) {
                         Toast.makeText(DialogActivity.this, "点击了确认按钮,用户姓名：" + ((UserBean) o).getName(), Toast.LENGTH_SHORT).show();
                     }
                 }
