@@ -4,12 +4,9 @@ import android.content.Context;
 import android.view.View;
 
 import androidx.annotation.NonNull;
-import androidx.lifecycle.Lifecycle;
-import androidx.lifecycle.LifecycleOwner;
-import androidx.lifecycle.ViewModelProvider;
 
-import com.elaine.testjetpack.base.BaseApp;
 import com.elaine.testjetpack.base.BaseDialog;
+import com.elaine.testjetpack.bean.UserBean;
 import com.elaine.testjetpack.callback.DialogCallback;
 import com.elaine.testjetpack.databinding.DialogMyBinding;
 
@@ -28,5 +25,9 @@ public class MyDialog extends BaseDialog<DialogMyBinding> {
     @Override
     protected void init() {
         mBinding.setCallback(callback);
+    }
+
+    public void initData(UserBean userBean) {
+        mBinding.setUserBean(userBean);
     }
 }

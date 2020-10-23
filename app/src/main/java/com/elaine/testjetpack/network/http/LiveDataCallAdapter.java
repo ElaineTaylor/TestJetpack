@@ -15,7 +15,6 @@ import retrofit2.Response;
 public class LiveDataCallAdapter<T> implements CallAdapter<T, LiveData<T>> {
     private Type mResponseType;
 
-
     public LiveDataCallAdapter(Type mResponseType) {
         this.mResponseType = mResponseType;
     }

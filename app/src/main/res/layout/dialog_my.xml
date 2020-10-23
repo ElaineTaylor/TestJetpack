@@ -6,6 +6,10 @@
         <variable
             name="callback"
             type="com.elaine.testjetpack.callback.DialogCallback" />
+
+        <variable
+            name="userBean"
+            type="com.elaine.testjetpack.bean.UserBean" />
     </data>
 
     <LinearLayout
@@ -25,7 +29,19 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:onClick="@{() ->  callback.onDismiss(1)}"
-                android:text="关闭======" />
+                android:text="关闭" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{userBean.nickname+userBean.name+userBean.sex}" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:onClick="@{() ->  callback.onClick(userBean)}"
+                android:text="确认" />
 
         </LinearLayout>
 

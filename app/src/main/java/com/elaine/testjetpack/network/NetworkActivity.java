@@ -9,10 +9,8 @@ import com.elaine.testjetpack.R;
 import com.elaine.testjetpack.base.BaseActivity;
 import com.elaine.testjetpack.databinding.ActivityNetworkBinding;
 import com.elaine.testjetpack.network.bean.ArticleBean;
-import com.elaine.testjetpack.network.http.wan.WanService;
-import com.elaine.testjetpack.network.http.wan.WanResponse;
 import com.elaine.testjetpack.network.http.NetStateBean;
-import com.elaine.testjetpack.network.http.RetrofitUtil;
+import com.elaine.testjetpack.network.http.wan.WanResponse;
 import com.google.gson.Gson;
 
 public class NetworkActivity extends BaseActivity<ActivityNetworkBinding> {
@@ -46,7 +44,8 @@ public class NetworkActivity extends BaseActivity<ActivityNetworkBinding> {
     }
 
     private void initData() {
-        RetrofitUtil.getInstance().createService(WanService.class).getArticle(1).observe(this, new Observer<WanResponse<ArticleBean>>() {
+        networkViewModel.init();
+        networkViewModel.liveDataLiveData.observe(this, new Observer<WanResponse<ArticleBean>>() {
             @Override
             public void onChanged(WanResponse<ArticleBean> articleBeanWanResponse) {
                 Log.e("data======", new Gson().toJson(articleBeanWanResponse));

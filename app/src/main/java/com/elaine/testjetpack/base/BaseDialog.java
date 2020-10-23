@@ -26,13 +26,13 @@ public abstract class BaseDialog<T> extends Dialog {
     }
 
     public BaseDialog(@NonNull Context context, DialogCallback callback) {
-        super(context, R.style.baseDialog);
+        super(context, R.style.BaseDialog);
         this.context = context;
         this.callback = callback;
     }
 
     protected BaseDialog(@NonNull Context context, boolean cancel, boolean backCancel, DialogCallback callback) {
-        super(context, R.style.baseDialog);
+        super(context, R.style.BaseDialog);
         this.context = context;
         this.callback = callback;
         this.cancel = cancel;
