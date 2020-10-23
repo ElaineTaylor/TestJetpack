@@ -1,5 +1,7 @@
 package com.elaine.testjetpack.list;
 
+import android.widget.Toast;
+
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
@@ -7,6 +9,7 @@ import com.elaine.testjetpack.R;
 import com.elaine.testjetpack.base.BaseActivity;
 import com.elaine.testjetpack.databinding.ActivityListBinding;
 
+//TODO 待完善Adapter的点击事件
 public class ListActivity extends BaseActivity<ActivityListBinding> {
     private ListViewModel listViewModel;
     private ListAdapter listAdapter;
@@ -41,6 +44,7 @@ public class ListActivity extends BaseActivity<ActivityListBinding> {
         listAdapter = new ListAdapter(listViewModel.userBeanList);
         mBinding.rvList.setLayoutManager(new LinearLayoutManager(this));
         mBinding.rvList.setAdapter(listAdapter);
+        listAdapter.setOnItemClickListener((position, userBean) -> Toast.makeText(ListActivity.this, "data===" + userBean.getName(), Toast.LENGTH_SHORT).show());
     }
 
 }

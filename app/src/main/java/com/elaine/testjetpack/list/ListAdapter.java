@@ -1,7 +1,6 @@
 package com.elaine.testjetpack.list;
 
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -14,9 +13,14 @@ import java.util.List;
 
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder> {
     private List<UserBean> userBeanList;
+    private OnItemClickListener onItemClickListener;
 
     public ListAdapter(List<UserBean> userBeanList) {
         this.userBeanList = userBeanList;
+    }
+
+    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
+        this.onItemClickListener = onItemClickListener;
     }
 
     @NonNull
@@ -28,6 +32,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder
     @Override
     public void onBindViewHolder(@NonNull ListViewHolder holder, int position) {
         holder.itemListBinding.setUserBean(userBeanList.get(position));
+        holder.itemView.setOnClickListener(v -> onItemClickListener.OnItemClick(position, userBeanList.get(position)));
         holder.itemListBinding.executePendingBindings();
     }
 
@@ -46,4 +51,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder
         }
     }
 
+    public interface OnItemClickListener {
+        void OnItemClick(int position, UserBean userBean);
+    }
 }
