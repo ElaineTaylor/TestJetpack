@@ -14,7 +14,7 @@ public class ListViewModel extends ViewModel {
 
     public void initListData() {
         List<UserBean> userBeans = new ArrayList<>();
-        for (int i = 0; i < 50; i++) {
+        for (int i = 0; i < 100; i++) {
             UserBean userBean = new UserBean();
             userBean.setName("name" + i);
             userBean.setNickname("nickname" + i);

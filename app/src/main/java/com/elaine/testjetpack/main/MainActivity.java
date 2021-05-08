@@ -1,5 +1,9 @@
 package com.elaine.testjetpack.main;
 
+import androidx.annotation.NonNull;
+import androidx.lifecycle.Lifecycle;
+import androidx.lifecycle.LifecycleEventObserver;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.elaine.testjetpack.R;
@@ -31,6 +35,17 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> {
         mainViewModel.intentKey.observe(this, intentKey -> {
             GotoManager.toActivity(intentKey, this);
         });
+        getLifecycle().addObserver(new LifecycleEventObserver() {
+            @Override
+            public void onStateChanged(@NonNull LifecycleOwner source, @NonNull Lifecycle.Event event) {
+
+            }
+        });
     }
 
+    @NonNull
+    @Override
+    public Lifecycle getLifecycle() {
+        return super.getLifecycle();
+    }
 }
