@@ -1,3 +1,4 @@
+include ':testworkmanager'
 include ':testroom'
 include ':testdatabinding'
 include ':testviewmodel'
