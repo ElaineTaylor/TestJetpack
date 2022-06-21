@@ -4,7 +4,12 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/TestJetpack.iml" filepath="$PROJECT_DIR$/.idea/TestJetpack.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/TestJetpack.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/TestJetpack.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/testdatabinding/TestJetpack.testdatabinding.iml" filepath="$PROJECT_DIR$/.idea/modules/testdatabinding/TestJetpack.testdatabinding.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/testlifecycle/TestJetpack.testlifecycle.iml" filepath="$PROJECT_DIR$/.idea/modules/testlifecycle/TestJetpack.testlifecycle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/testlivedata/TestJetpack.testlivedata.iml" filepath="$PROJECT_DIR$/.idea/modules/testlivedata/TestJetpack.testlivedata.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/testroom/TestJetpack.testroom.iml" filepath="$PROJECT_DIR$/.idea/modules/testroom/TestJetpack.testroom.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/testviewmodel/TestJetpack.testviewmodel.iml" filepath="$PROJECT_DIR$/.idea/modules/testviewmodel/TestJetpack.testviewmodel.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/testworkmanager/TestJetpack.testworkmanager.iml" filepath="$PROJECT_DIR$/.idea/modules/testworkmanager/TestJetpack.testworkmanager.iml" />
     </modules>
   </component>
 </project>
